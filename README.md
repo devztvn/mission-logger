@@ -27,10 +27,9 @@ Each telemetry sample is stored as a single JSON object per line, making it easy
 
 This mimics how robotics, simulation, and backend systems package and preserve run data.
 
----
 
 ## Project structure
-
+```text
 mission_logger/
 ├── src/
 │   ├── telemetry_collector.cpp
@@ -46,23 +45,23 @@ mission_logger/
 ├── archives/
 │   └── mission_YYYY-MM-DD_HHMMSS.tar.gz
 
----
+```
 
 ## Build instructions
 
 Compile both tools from the project root:
-
+```bash
 g++ -std=c++20 -O2 -Wall -Wextra -pedantic src/telemetry_collector.cpp -o build/telemetry_collector  
 g++ -std=c++20 -O2 -Wall -Wextra -pedantic src/mission_archiver.cpp -o build/mission_archiver
 
----
+```
 
 ## Usage
 
 ### Run telemetry collection
-
+```bash
 ./build/telemetry_collector
-
+```
 Enter telemetry samples in the terminal:
 
 speed=1.2 battery=87 temp=41.3 x=12.4 y=-3.1  
@@ -71,15 +70,13 @@ END
 
 This creates a new mission directory under `missions/`.
 
----
 
 ### Archive a mission
-
+```bash
 ./build/mission_archiver missions/mission_YYYY-MM-DD_HHMMSS --result success --notes "test run"
-
+```
 This generates `metadata.json` and a compressed archive in `archives/`.
 
----
 
 ## Why this exists
 
@@ -92,7 +89,7 @@ This project was built to practice:
 
 It reflects patterns used in robotics systems, game servers, and backend infrastructure.
 
----
+
 
 ## Author
 
