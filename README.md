@@ -93,6 +93,6 @@ It reflects patterns used in robotics systems, game servers, and backend infrast
 
 ## Author
 
-Steven Smith
+Steven Smith |
 GitHub: https://github.com/ztvndev
 
